@@ -26,17 +26,17 @@
 
         <section class="section-2">
             <div id='hours-min'>
-                <div class="hours">
+                <div id="hours">
                     <a class="h-m-font">Hours</a>
-                    <input id="input-h" type="text" placeholder="Hours">
+                    <input id="input-h" type="text" name="hours" placeholder="Hours">
                 </div>
                 <div id="minutes">
                     <a class="h-m-font">Minutes</a>
-                    <input id="input-m" type="text" placeholder="Minutes">
+                    <input id="input-m" type="number" name="minutes" placeholder="Minutes" min="1" max="60" minlength="1" maxlength="2">
                 </div>
-            </div>
+            </div> <!-- submit -->
             <div class="send-info">
-                <button type="submit" class="send-i" onclick="submitBut()"><a>Send Information</a></button>
+                <button class="send-i" onclick="submit()"><a>Send Information</a></button>
             </div>
         </section>
 
@@ -45,8 +45,8 @@
             <div class="angle">
                 <a class="tittle-sec-3">Add hours and minutes to get an angle</a>
             </div>
-            <div class="number">
-                    
+            <div id="number">
+                <a id="result">0&ordm</a>
             </div>
             </div>
         </section>

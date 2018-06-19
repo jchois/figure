@@ -73,10 +73,10 @@ button{
     justify-content: space-between;
     margin-bottom: 20px;
 }
-.hours{
+#hours{
     padding-right: 10px;
 }
-.hours, #minutes{
+#hours, #minutes{
     color:#787878;
     width: 100%;
     display: flex;
@@ -130,9 +130,14 @@ button{
     color: #787878;
     text-align: center;
 }
-.number{
+#number{
     margin: 15px 0 0 0;
     width: 85px;
     height: 50px;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    color: #787878;;
 }
