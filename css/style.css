@@ -66,6 +66,20 @@ button{
 .section-2{
     margin: 8px 0 0 0;
 }
+#bad-req{
+    display: none;
+    width: 100%;
+    border: 1px solid #C65353;
+    border-radius: 3px;
+    text-align: center;
+    margin: -12px 0 15px 0;
+    padding: 3px 0;
+}
+#a-br{
+    width: 100%;
+    color: #C65353;
+    font-size: 13px;
+}
 #hours-min{
     width: 100%;
     display: flex;
