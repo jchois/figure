@@ -24,11 +24,12 @@
         <hr class="line">
         </section>
 
+        <!-- section 2 -->
         <section class="section-2">
             <div id='hours-min'>
                 <div id="hours">
                     <a class="h-m-font">Hours</a>
-                    <input id="input-h" type="text" name="hours" placeholder="Hours">
+                    <input id="input-h" type="number" name="hours" placeholder="Hours" min="1" max="12" minlength="1" maxlength="2">
                 </div>
                 <div id="minutes">
                     <a class="h-m-font">Minutes</a>
@@ -40,10 +41,11 @@
             </div>
         </section>
 
+        <!-- section 3 -->
         <section class="section-3">
             <div class="box-sec-3">
             <div class="angle">
-                <a class="tittle-sec-3">Add hours and minutes to get an angle</a>
+                <a id="tittle-angle" class="tittle-sec-3">Add hours and minutes to get an angle</a>
             </div>
             <div id="number">
                 <a id="result">0&ordm</a>

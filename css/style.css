@@ -43,7 +43,7 @@ button{
 }
 .change-button{
     width: 75px;
-    border: 1px solid #50b000;
+    border: 1px solid #46B02C;
     border-radius: 3px;
     background-color: transparent;
     text-align: center;
@@ -51,7 +51,7 @@ button{
 .change-b{
     font-size: 9px;
     padding: 4px;
-    color: #50b000;
+    color: #46B02C;
 }
 .line{
     color: #787878;
@@ -104,7 +104,7 @@ button{
     width: 100%;
     border-radius: 5px;
     color: white;
-    background-color: #50b000;
+    background-color: #46B02C;
     font-size: 14px;
     padding: 4px;
 }
