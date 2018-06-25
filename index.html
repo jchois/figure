@@ -29,19 +29,28 @@
             <div id="bad-req">
                 <a id="a-br">Bad Request</a>
             </div>
-            <div id='hours-min'>
-                <div id="hours">
-                    <a class="h-m-font">Hours</a>
-                    <input id="input-h" type="number" name="hours" placeholder="Hours" min="1" max="12" minlength="1" maxlength="2">
+            <div id='sides'>
+                <div id="top-side">
+                    <a class="h-m-font">Top</a>
+                    <input id="input-t" type="number" name="hours" placeholder="Top" min="1" max="" minlength="1" maxlength="2">
                 </div>
-                <div id="minutes">
-                    <a class="h-m-font">Minutes</a>
-                    <input id="input-m" type="number" name="minutes" placeholder="Minutes" min="1" max="59" minlength="1" maxlength="2">
+                <div id="bottom-side">
+                    <a class="h-m-font">Bottom</a>
+                    <input id="input-b" type="number" name="minutes" placeholder="Bottom" min="1" max="" minlength="1" maxlength="2">
+                </div>
+
+                <div id="left-side">
+                    <a class="h-m-font">Left</a>
+                    <input id="input-l" type="number" name="hours" placeholder="Left" min="1" max="" minlength="1" maxlength="2">
+                </div>
+                <div id="right-side">
+                    <a class="h-m-font">Rigth</a>
+                    <input id="input-r" type="number" name="minutes" placeholder="Rigth" min="1" max="" minlength="1" maxlength="2">
                 </div>
             </div> 
             <!-- submit -->
             <div class="send-info">
-                <button class="send-i" onclick="submit()"><a>Send Information</a></button>
+                <button class="send-i" onclick="submit()"><a>Check</a></button>
             </div>
         </section>
 
@@ -49,11 +58,9 @@
         <section class="section-3">
             <div class="box-sec-3">
             <div class="angle">
-                <a id="tittle-angle" class="tittle-sec-3">Add hours and minutes to get an angle</a>
+                <a id="tittle-angle" class="tittle-sec-3">Square / Rectangle</a>
             </div>
-            <div id="number">
-                <a id="result">0&ordm</a>
-            </div>
+            
             </div>
         </section>
 

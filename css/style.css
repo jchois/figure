@@ -29,6 +29,9 @@ button{
 .section-1, .section-2, .section-3{
     width: 100%;
 }
+.section-1{
+    display: none;
+}
 #header{
     margin: 0 0 10px 0;
     width: 100%;
@@ -41,6 +44,7 @@ button{
     font-weight: bold;
 }
 .change-button{
+    display: none;
     width: 75px;
     border: 1px solid #46B02C;
     border-radius: 3px;
@@ -79,26 +83,29 @@ button{
     color: #C65353;
     font-size: 13px;
 }
-#hours-min{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-#hours{
-    padding-right: 10px;
-}
-#hours, #minutes{
-    color:#787878;
+#sides{
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#top-side{
+    padding-right: 10px;
+}
+#top-side, #bottom-side, #left-side, #right-side{
+    color:#787878;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .h-m-font{
     font-size: 14px;
 }
-#input-m, #input-h{
+#input-t, #input-b, #input-l, #input-r{
+    width: 50%;
     color: lightgrey;
     margin: 10px 0 0 0;
     border: 1px solid lightgrey;
@@ -106,7 +113,13 @@ button{
     padding: 8px;
     font-size: 12px;
 }
-
+#input-b{
+    margin-left: -20px;
+    margin-right: 2px;
+}
+#input-r{
+    margin-left: -10px;
+}
 .send-info{
     margin-bottom: 20px;
     width: 100%;

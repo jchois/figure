@@ -1,53 +1,54 @@
 function changeLayout() {
-    // var x = document.getElementById("hours-min").style.flexDirection;
-
-    // if (x == "row") {
-    //     document.getElementById("hours-min").style.flexDirection = "column";
-    //     document.getElementById("hours-min").style.margin = "-10px 0 0 0";
-    //     document.getElementById("minutes").style.margin = "10px 0 15px 0";
-    //     document.getElementById("box").style.height = "350px";
-        
-    // } else {
-    //     document.getElementById("hours-min").style.flexDirection = "row";
-    //     document.getElementById("box").style.height = "320px";
-    //     document.getElementById("hours-min").style.alignItems= "baseline";
-    // }
 
     var element = document.getElementById("hours-min");
     element.classList.toggle("direction-column");
   }
 
 function submit() {
-    var h = document.getElementById('input-h');
-    var m = document.getElementById('input-m');
+    var t = document.getElementById('input-t');
+    var b = document.getElementById('input-b');
+    var l = document.getElementById('input-l');
+    var r = document.getElementById('input-r');
 
-    if(h.value==0 && m.value==0){
-        document.getElementById("result").innerHTML = "0&ordm";
-        document.getElementById("tittle-angle").innerHTML = "At <span style=color:#46B02C;>  " +  h.value + " Hours </span> with <span style=color:#46B02C;> " + m.value + " Minutes</span> there's an angle of: " ;
-    }
-    else{
-    if(h.value <= 0 || h.value > 12 || h.value >= e || m.value <= 0 || m.value > 60 || m.value >= e ){
-
+    if(t.value==0 || b.value==0 || l.value==0 || r.value==0){
 
         document.getElementById("bad-req").style.display = "block";
-        document.getElementById("result").innerHTML = "0&ordm";
-        document.getElementById("tittle-angle").innerHTML = "Add hours and minutes to get an angle";
+
     }
     else{
-        //var final = Math.abs((h.value*(m.value/5)*6)-(m.value*6));
-        var final = Math.abs((0.5 * m.value) + (30 * (h.value % 12)) - (6 * m.value));
+        if(t.value <= 0 || b.value <= 0 || l.value <= 0 || r.value <= 0 ){
 
-        document.getElementById("bad-req").style.display = "none";
-        document.getElementById("tittle-angle").innerHTML = "At <span style=color:#46B02C;>  " +  h.value + " Hours </span> with <span style=color:#46B02C;> " + m.value + " Minutes</span> there's an angle of: " ;
-        document.getElementById("result").innerHTML = + final + "&ordm";
-    }
+
+            document.getElementById("bad-req").style.display = "block";
+            document.getElementById("tittle-angle").innerHTML = "Add hours and minutes to get an angle";
+        }
+        else{
+            if(t.value != b.value || l.value != r.value && t.value != l.value){
+                document.getElementById("tittle-angle").innerHTML = "It's not a figure";
+            }
+            //square
+            if(t.value == b.value && l.value == r.value && t.value == l.value){
+                document.getElementById("bad-req").style.display = "none";
+                document.getElementById("tittle-angle").innerHTML = "It's a square";
+            }
+            //rectangle
+            else{
+                if(t.value == b.value && l.value == r.value && t.value != l.value){
+                    if(l.value > t.value){
+                        document.getElementById("bad-req").style.display = "none";
+                        document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the left and right side are larger";
+                    }
+                    else{
+                        if(l.value < t.value){
+                            document.getElementById("bad-req").style.display = "none";
+                            document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the top and bottom side are larger";
+                        }
+                    }
+                }
+            }
+        }
     }    
 
-
-    /*
-    if (h == 12) h = 0;
-    if (m == 60) m = 0;
-    */
 }
 
 
