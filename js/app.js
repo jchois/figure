@@ -1,8 +1,3 @@
-function changeLayout() {
-
-    var element = document.getElementById("hours-min");
-    element.classList.toggle("direction-column");
-  }
 
 function submit() {
     var t = document.getElementById('input-t');
@@ -13,19 +8,19 @@ function submit() {
     if(t.value==0 || b.value==0 || l.value==0 || r.value==0){
 
         document.getElementById("bad-req").style.display = "block";
+        document.getElementById("a-br").innerHTML = 'One or more fields are empty or with "0" ';
+        document.getElementById("tittle-angle").innerHTML = "Square / Rectangle";
 
     }
     else{
-        if(t.value <= 0 || b.value <= 0 || l.value <= 0 || r.value <= 0 ){
+        if(t.value < 0 || b.value < 0 || l.value < 0 || r.value < 0 ){
 
 
-            document.getElementById("bad-req").style.display = "block";
-            document.getElementById("tittle-angle").innerHTML = "Add hours and minutes to get an angle";
+            document.getElementById("bad-req").style.display = "block"; 
+            document.getElementById("a-br").innerHTML = "There is a negative number";
+
         }
         else{
-            if(t.value != b.value || l.value != r.value && t.value != l.value){
-                document.getElementById("tittle-angle").innerHTML = "It's not a figure";
-            }
             //square
             if(t.value == b.value && l.value == r.value && t.value == l.value){
                 document.getElementById("bad-req").style.display = "none";
@@ -33,18 +28,47 @@ function submit() {
             }
             //rectangle
             else{
+
                 if(t.value == b.value && l.value == r.value && t.value != l.value){
-                    if(l.value > t.value){
-                        document.getElementById("bad-req").style.display = "none";
-                        document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the left and right side are larger";
-                    }
-                    else{
-                        if(l.value < t.value){
+                    
+                    if(t.value == b.value && l.value == r.value && t.value != l.value){
+                        if(l.value > t.value){
                             document.getElementById("bad-req").style.display = "none";
-                            document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the top and bottom side are larger";
+                            document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the left and right side are larger";
+                        }
+                        else{
+                            if(l.value < t.value){
+                                document.getElementById("bad-req").style.display = "none";
+                                document.getElementById("tittle-angle").innerHTML = "It's a rectangle, the top and bottom side are larger";
+                            }
                         }
                     }
+
                 }
+                else{
+                    if(t.value == b.value && l.value != r.value){
+                        document.getElementById("bad-req").style.display = "block";
+                        document.getElementById("tittle-angle").innerHTML = "The left or right side is wrong";
+                        document.getElementById("a-br").innerHTML = "Bad Request";
+                    }
+                    else{
+                        if(t.value != b.value && l.value == r.value){
+                            document.getElementById("bad-req").style.display = "block";
+                            document.getElementById("tittle-angle").innerHTML = "The top or bottom side is wrong";
+                            document.getElementById("a-br").innerHTML = "Bad Request";
+                        }
+                        else{
+                            if(t.value != b.value && l.value != r.value){
+                                document.getElementById("bad-req").style.display = "block";
+                                document.getElementById("tittle-angle").innerHTML = "The values are different, you can't form a figure";
+                                document.getElementById("a-br").innerHTML = "Bad Request";
+                            }
+                        }
+                    }
+                    
+                }
+
+                
             }
         }
     }    
